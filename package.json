@@ -26,6 +26,7 @@
     "typedoc": "^0.23.16"
   },
   "scripts": {
+    "build": "tsc",
     "docs": "typedoc --readme \"none\" --out docs --entryPointStrategy expand src"
   }
 }

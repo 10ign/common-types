@@ -1,11 +1,24 @@
 name: 'Publish'
 
 on:
+  # Runs when the version is bumped
   workflow_run:
     workflows: ["Version"]
     types: [completed]
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "publish"
+  cancel-in-progress: true
+
 jobs:
+  # Publishes to npm
   publish:
     name: 'NPM Publish'
     runs-on: ubuntu-latest
@@ -15,3 +28,31 @@ jobs:
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
+
+  # Generate and deploy the docs to GitHub pages
+  docs:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Yarn install
+        uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: install
+      - name: Generate documentation
+        uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: docs
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload the docs directory
+          path: './docs'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
