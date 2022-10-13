@@ -1,0 +1,13 @@
+# Packages
+node_modules
+
+# Output
+dist
+docs
+
+# Misc
+.npm
+npm-debug.log
+package-lock.json
+yarn-error.log
+.DS_Store

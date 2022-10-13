@@ -1,0 +1,31 @@
+{
+  "name": "@10ign/common-types",
+  "version": "1.0.0",
+  "description": "Common Types",
+  "main": "dist/CommonTypes.js",
+  "source": "src/CommonTypes.ts",
+  "types": "dist/CommonTypes.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:10ign/common-types.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "10ign",
+    "common",
+    "types"
+  ],
+  "author": "Bruno Alves de Faria",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "typedoc": "^0.23.16"
+  },
+  "scripts": {
+    "docs": "typedoc --readme \"none\" --out docs --entryPointStrategy expand src"
+  }
+}
