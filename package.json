@@ -1,6 +1,6 @@
 {
   "name": "@10ign/common-types",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Common Types",
   "main": "dist/CommonTypes.js",
   "source": "src/CommonTypes.ts",
