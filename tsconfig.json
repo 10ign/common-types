@@ -8,8 +8,7 @@
     "outDir": "dist",
     "rootDir": "./src",
     "target": "ESNext",
-    "strict": true,
-    "noEmit": true
+    "strict": true
   },
   "typedocOptions": {
     "entryPoints": ["./src/CommonTypes.ts"],
