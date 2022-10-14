@@ -6,6 +6,12 @@ on:
     branches:
       - 'main'
 
+# Enable GITHUB_TOKEN permissions: version bump and deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 # Allow one concurrent deployment
 concurrency:
   group: "publish"
@@ -97,7 +103,7 @@ jobs:
 
   # Deploy the documentation to GitHub pages
   pages:
-    name: 'Deploy GitHub Pages'
+    name: 'Deploy to GitHub Pages'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
