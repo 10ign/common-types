@@ -10,6 +10,7 @@
     "target": "ESNext",
     "strict": true
   },
+  "include": ["./src/CommonTypes.ts"],
   "typedocOptions": {
     "entryPoints": ["./src/CommonTypes.ts"],
     "out": "docs",
