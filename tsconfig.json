@@ -4,9 +4,16 @@
     "esModuleInterop": true,
     "declaration": true,
     "declarationMap": true,
+    "sourceMap": true,
     "outDir": "dist",
     "rootDir": "./src",
     "target": "ESNext",
-    "strict": true
+    "strict": true,
+    "noEmit": true
+  },
+  "typedocOptions": {
+    "entryPoints": ["./src/CommonTypes.ts"],
+    "out": "docs",
+    "readme": "none"
   }
 }

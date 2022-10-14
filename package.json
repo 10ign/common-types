@@ -27,6 +27,6 @@
   },
   "scripts": {
     "build": "tsc",
-    "docs": "typedoc --readme \"none\" --out docs --entryPointStrategy expand src"
+    "docs": "typedoc"
   }
 }
